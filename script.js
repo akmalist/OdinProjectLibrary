@@ -10,13 +10,13 @@ function Book(title, author, pages, status) {
   this.status = status;
   this.info = function () {
     return (
-      "Title: " +
+      " Title: " +
       title +
-      "Author: " +
+      " Author: " +
       author +
-      "Pages: " +
+      " Pages: " +
       pages +
-      "Status: " +
+      " Status: " +
       status
     );
   };
@@ -25,8 +25,6 @@ function Book(title, author, pages, status) {
 const book1 = new Book("Harr Potter", " jk roland", " 234", " not read yet");
 const book1done = book1.info();
 myLibrary.push(book1done);
-
-// console.log(book1.info());
 
 function addBookToLibrary() {
   // do stuff here
@@ -37,25 +35,13 @@ function addBookToLibrary() {
   const newBook1 = new Book(userBook, userAuthor, userpage, userStatus);
   const newBook2 = newBook1.info();
   myLibrary.push(newBook2);
-
   console.log(myLibrary);
-  //   document.write(book1.info());
 }
 
 addBookToLibrary();
 
-// var render = function (template, node) {
-//   node.innerHTML = template;
-// };
+myLibrary.forEach(render);
 
-// var template = "<h1>Hello world!</h1>";
-// render(template, document.querySelector("#main"));
-
-function render() {
-  myLibrary.forEach(function (arrayItem) {
-    var x = arrayItem;
-    `<li>${document.write(x)}</li>`;
-  });
+function render(item, index) {
+  document.getElementById("myUl").innerHTML += index + 1 + ":" + item + "<br>";
 }
-
-render();
