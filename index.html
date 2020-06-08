@@ -7,11 +7,46 @@
   </head>
   <body>
     <h1>My library</h1>
-    <div id="myUl"></div>
-    <form action="" method="get">
-      <input type=" Add your book" />
-      <input type="button" value="NEW BOOK" />
-    </form>
+   
+    <div id=main-page>
+
+      <div id='book-container'>
+          <button id='show-form'>Add Books</button>
+         <button id='edit-book'> Edit Books</button>
+      </div id='add-book'> 
+      <form id="my-form">
+        
+        <div class="formBox">
+          <label>Title</label>
+          <input type="text" id="title" placeholder="Title"/>
+        </div>
+        <div class="formBox">
+          <label>Author</label>
+          <input type="text" id="author" placeholder="Author"/>
+        </div>
+        <div class="formBox">
+          <label >Pages</label>
+          <input type="number" id="pages" placeholder="Pages"/>
+      </div>
+      <div class="formBox">
+        <label >Status</label>
+        <input type="text" id="userStatus" placeholder="Read /Not Yet"/>
+    </div>
+        <div class="formBox">
+          <button id="btn">Click to Add</button>
+        </div>
+     
+      </form>
+
+      <div>
+
+      <div id="all-books">
+      </div>
+
+    </div>
+ 
+ 
   </body>
-  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="script.js"></script> 
 </html>
