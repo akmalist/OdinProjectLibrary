@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Library</title>
-  </head>
-  <body>
-    <h1>My library</h1>
-   
-    <div id=main-page>
 
-      <div id='book-container'>
-          <button id='show-form'>Add Books</button>
-         <button id='edit-book'> Edit Books</button>
-      </div id='add-book'> 
-      <form id="my-form">
-        
-        <div class="formBox">
-          <label>Title</label>
-          <input type="text" id="title" placeholder="Title"/>
-        </div>
-        <div class="formBox">
-          <label>Author</label>
-          <input type="text" id="author" placeholder="Author"/>
-        </div>
-        <div class="formBox">
-          <label >Pages</label>
-          <input type="number" id="pages" placeholder="Pages"/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library</title>
+</head>
+
+<body>
+  <h1>My library</h1>
+
+  <div id=main-page>
+
+    <div id="edit-buttons">
+      <button id="show-form">ADD BOOK</button>
+      <button id="edit-books">EDIT BOOKS</button>
+    </div>
+
+    <div id='book-container'>
+
+    </div id='add-book'>
+    <form id="my-form">
+
+      <div class="formBox">
+        <label>Title</label>
+        <input type="text" id="title" placeholder="Title" />
       </div>
       <div class="formBox">
-        <label >Status</label>
-        <input type="text" id="userStatus" placeholder="Read /Not Yet"/>
-    </div>
-        <div class="formBox">
-          <button id="btn">Click to Add</button>
-        </div>
-     
-      </form>
+        <label>Author</label>
+        <input type="text" id="author" placeholder="Author" />
+      </div>
+      <div class="formBox">
+        <label>Pages</label>
+        <input type="number" id="pages" placeholder="Pages" />
+      </div>
+      <div class="formBox">
+        <label>Status</label>
+        <input type="checkbox" id="userStatus"  name="userStatus" value="true"  />
+      </div>
+      <div class="formBox">
+        <button id="btn">Submit</button>
+      </div>
+    </form>
 
-      <div>
+    <div>
 
       <div id="all-books">
       </div>
 
     </div>
- 
- 
-  </body>
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-  <script src="script.js"></script> 
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+<script src="script.js"></script>
+
 </html>
