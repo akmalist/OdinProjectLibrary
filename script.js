@@ -31,7 +31,7 @@ function submitForm(ev) {
   let userBook = document.getElementById('title').value;
   let userAuthor = document.getElementById('author').value;
   let userPage = document.getElementById('pages').value;
-  let userStatus = document.getElementById('userStatus').checked;
+  let userStatus = document.getElementById('userStatus').value;
 
   addBookToLibrary(userBook, userAuthor, userPage, userStatus);
   document.forms[0].reset();
@@ -59,7 +59,9 @@ function displayAll() {
       "<span class='author'> by " + myLibrary[e].author + "</span></div>" +
       "<div class='card-bottom'><span class='pages'>" + myLibrary[e].pages + " pages</span>" +
       "<span class='read-status'> Read? " + myLibrary[e].status + "</span></div>" +
-      "<div style='background: darkred; color: white; padding: 7px; cursor: pointer; display: " + editDisplay + "' onclick='deleteBook(" + deleteIndex + ")'> Delete</div></div>";
+      "<div style='background: darkred; color: white; padding: 7px; cursor: pointer; display: " + editDisplay + "' onclick='deleteBook(" + deleteIndex + ")'> Delete</div></div>"
+      +"<div style='background: green; color: yellow; padding: 7px; cursor: pointer; display: " + "' onclick='readStatus(" + deleteIndex + ")'> Read</div></div>";
+    
     deleteIndex++;
   };
 }
@@ -67,16 +69,16 @@ function displayAll() {
 function deleteBook(item) {
   myLibrary.splice(item, 1);
   displayAll();
-}
+};
 
-function readStatus(){
+function readStatus(item){ 
+  myLibrary[item] 
+
   
+var ele = document.getElementsByClassName("card-top");
+ return ele[item].style.setProperty("text-decoration", "line-through"); 
 }
-
-// Add a button on each book’s display to change its read status.
-// To facilitate this you will want to create the function that 
-// toggles a book’s read status  on your Book prototype instance.
-
+ 
 const book1 = new Book("Harr Potter", " jk roland", " 234", 'false');
 // const book1done = book1.info();
 myLibrary.push(book1);
