@@ -1,7 +1,15 @@
 let editBooksButton = document.querySelector("#edit-books");
+let showFormButton = document.querySelector("#show-form");
+let addBookForm = document.querySelector("#add-book");
+let closeFormButton = document.querySelector("#close-form")
 let books = document.querySelector("#all-books");
+let addBookButton = document.querySelector("#btn")
 let editDisplay = "none";
+
 editBooksButton.addEventListener("click", toggleEdit);
+showFormButton.addEventListener("click",toggleForm);
+closeFormButton.addEventListener("click",toggleForm)
+addBookButton.addEventListener("click",submitForm)
 
 
 let myLibrary = [];
@@ -31,13 +39,16 @@ function submitForm(ev) {
   let userBook = document.getElementById('title').value;
   let userAuthor = document.getElementById('author').value;
   let userPage = document.getElementById('pages').value;
-  let userStatus = document.getElementById('userStatus').value;
+  // let userStatus = document.getElementById('userStatus').value;
 
-  addBookToLibrary(userBook, userAuthor, userPage, userStatus);
+  addBookToLibrary(userBook, userAuthor, userPage);
   document.forms[0].reset();
-  console.log(myLibrary);
-
+  toggleForm();
   displayAll();
+}
+
+function toggleForm(){
+  addBookForm.classList.toggle("hide-form")
 }
 
 function toggleEdit() {
@@ -49,20 +60,20 @@ function toggleEdit() {
   displayAll();
 }
 
+
 function displayAll() {
 
   books.innerHTML = "";
-  deleteIndex = 0;
+  eachIndex = 0;
   for (e in myLibrary) {
-    books.innerHTML += "<div class='book-card'>" +
+    books.innerHTML += "<div class='book-card'>" + "<div class= 'card-info'>" +
       "<div class='card-top'><span class='title'>" + myLibrary[e].title + "</span>" +
       "<span class='author'> by " + myLibrary[e].author + "</span></div>" +
-      "<div class='card-bottom'><span class='pages'>" + myLibrary[e].pages + " pages</span>" +
-      "<span class='read-status'> Read? " + myLibrary[e].status + "</span></div>" +
-      "<div style='background: darkred; color: white; padding: 7px; cursor: pointer; display: " + editDisplay + "' onclick='deleteBook(" + deleteIndex + ")'> Delete</div></div>"
-      +"<div style='background: green; color: yellow; padding: 7px; cursor: pointer; display: " + "' onclick='readStatus(" + deleteIndex + ")'> Read</div></div>";
+      "<div class='card-bottom'><span class='pages'>" + myLibrary[e].pages + " pages</span>" + "</div> </div>" +
+      "<div style='background: darkred; color: white; padding: 7px; cursor: pointer; display: " + editDisplay + "' onclick='deleteBook(" + eachIndex + ")'> Delete</div></div>"
+      +"<div style='background: green; color: yellow; padding: 7px; cursor: pointer; display: " + editDisplay + "' onclick='readStatus(" + eachIndex + ")'> Read ✔</div></div>";
     
-    deleteIndex++;
+      eachIndex++;
   };
 }
 
@@ -72,18 +83,20 @@ function deleteBook(item) {
 };
 
 function readStatus(item){ 
-  myLibrary[item] 
+ let eachCard = document.getElementsByClassName("card-info");
+ return eachCard[item].style.setProperty("text-decoration","line-through");
 
-  
-var ele = document.getElementsByClassName("card-top");
- return ele[item].style.setProperty("text-decoration", "line-through"); 
 }
  
-const book1 = new Book("Harr Potter", " jk roland", " 234", 'false');
-// const book1done = book1.info();
+let book5= new Book("Harr Potter", " jk roland", " 234", 'false');
+let book1 = new Book("The Client", "John Grisham", "498", "Yes");
+let book2 = new Book("A Tale of Two Cities", "Charles Dickens", "835", "No");
+let book3 = new Book("The Great Gatsby", "F. Scott Fitzgerald", "218", "Yes");
+let book4 = new Book("Breathless", "Dean Koontz", "434", "Yes");
 myLibrary.push(book1);
+myLibrary.push(book2);
+// myLibrary.push(book3);
+// myLibrary.push(book4);
+// myLibrary.push(book5);
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('btn').addEventListener('click', submitForm);
-});
+displayAll();

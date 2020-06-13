@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Library</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -17,31 +18,39 @@
       <button id="edit-books">EDIT BOOKS</button>
     </div>
 
+
     <div id='book-container'>
+      <div id="add-book" class="hide-form">
 
-    </div id='add-book'>
-    <form id="my-form">
+        <form id="add-book-form">
 
-      <div class="formBox">
-        <label>Title</label>
-        <input type="text" id="title" placeholder="Title" />
-      </div>
-      <div class="formBox">
-        <label>Author</label>
-        <input type="text" id="author" placeholder="Author" />
-      </div>
-      <div class="formBox">
-        <label>Pages</label>
-        <input type="number" id="pages" placeholder="Pages" />
-      </div>
-      <div class="formBox">
+          <div>
+            <div id="close-form">X</div>
+            <h1>Add A Book</h1>
+          </div>
+
+          <div class="formBox">
+            <label>Title</label>
+            <input type="text" id="title" placeholder="Title" />
+          </div>
+          <div class="formBox">
+            <label>Author</label>
+            <input type="text" id="author" placeholder="Author" />
+          </div>
+          <div class="formBox">
+            <label>Pages</label>
+            <input type="number" id="pages" placeholder="Pages" />
+          </div>
+          <!-- <div class="formBox">
         <label>Status</label>
         <input type="text" id="userStatus"  name="userStatus"  placeholder="status"  />
+      </div> -->
+          <div class="formBox">
+            <button type ="button" id="btn">ADD</button>
+          </div>
+        </form>
       </div>
-      <div class="formBox">
-        <button id="btn">Submit</button>
-      </div>
-    </form>
+    </div>
 
     <div>
 
