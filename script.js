@@ -70,10 +70,9 @@ function displayAll() {
       "<div class='card-top'><span class='title'>" + myLibrary[e].title + "</span>" +
       "<span class='author'> by " + myLibrary[e].author + "</span></div>" +
       "<div class='card-bottom'><span class='pages'>" + myLibrary[e].pages + " pages</span>" + "</div> </div>" +
-      "<div style='background: darkred; color: white; padding: 7px; cursor: pointer; display: " + editDisplay + "' onclick='deleteBook(" + eachIndex + ")'> Delete</div></div>"
-      +"<div style='background: green; color: yellow; padding: 7px; cursor: pointer; display: " + editDisplay + "' onclick='readStatus(" + eachIndex + ")'> Read ✔</div></div>";
-    
-      eachIndex++;
+      "<div class = 'edit-buttons' style='display: " + editDisplay + "' onclick='deleteBook(" + eachIndex + ")'> Delete</div>" +
+      "<div class = 'edit-buttons'  style='background: rgb(48, 185, 128);  cursor: pointer; display: " + editDisplay + "' onclick='readStatus(" + eachIndex + ")'> Read ✔</div></div></div>"
+       eachIndex++;
   };
 }
 
